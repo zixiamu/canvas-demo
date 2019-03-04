@@ -9,15 +9,37 @@ var eraserEnable = false
 
 eraser.onclick = function(){
     eraserEnable = true
-    actions.className = 'actions x'
+    eraser.classList.add('active')
+    pen.classList.remove('active')
 }
 
-brush.onclick = function(){
+pen.onclick = function(){
     eraserEnable =false
-    actions.className = 'actions '
+    pen.classList.add('active')
+    eraser.classList.remove('active')
 }
 
-
+red.onclick = function(){
+    context.strokeStyle = 'red'
+    context.fillStyle = 'red'
+    red.classList.add('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
+}
+green.onclick = function(){
+    context.strokeStyle = 'green'
+    context.fillStyle = 'green'
+    red.classList.remove('active')
+    green.classList.add('active')
+    blue.classList.remove('active')
+}
+blue.onclick = function(){
+    context.strokeStyle = 'blue'
+    context.fillStyle = 'blue'
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.add('active')
+}
 
 function drawCircle(x,y,radius){
     context.beginPath();
